@@ -9,14 +9,20 @@
 
 #include "functions.hpp"
 #include "t_job.hpp"
+#include "t_jobSeries.hpp"
 #include "time_fun.hpp"
 
 
 int main() {
 
-	t_job job(3);
-	job[1] = 5;
-	std::cout << job[0] << " " << job[1] << " " << job[2] << std::endl;
+	t_jobSeries jobs(3, 5);
+	
+	for (int y = 0; y < 5; y++) {
+		for (int x = 0; x < 3; x++) {
+			std::cout << jobs[y][x] << "\t";
+			if (x == 2) std::cout << std::endl;
+		}
+	}
 
 	// std::string names = "data/names.txt",	// nazwa listy nazw plikow
 	// 			output = "output.txt";		// nazwa pliku z danymi wyjsciowymi

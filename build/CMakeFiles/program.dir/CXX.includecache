@@ -32,6 +32,12 @@ t_job.hpp
 vector
 -
 
+../include/t_jobSeries.hpp
+vector
+-
+t_job.hpp
+../include/t_job.hpp
+
 ../include/time_fun.hpp
 iostream
 -
@@ -65,6 +71,8 @@ functions.hpp
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/functions.hpp
 t_job.hpp
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_job.hpp
+t_jobSeries.hpp
+/home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.hpp
 time_fun.hpp
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/time_fun.hpp
 

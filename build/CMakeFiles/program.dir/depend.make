@@ -7,6 +7,7 @@ CMakeFiles/program.dir/src/functions.cpp.o: ../src/functions.cpp
 
 CMakeFiles/program.dir/src/main.cpp.o: ../include/functions.hpp
 CMakeFiles/program.dir/src/main.cpp.o: ../include/t_job.hpp
+CMakeFiles/program.dir/src/main.cpp.o: ../include/t_jobSeries.hpp
 CMakeFiles/program.dir/src/main.cpp.o: ../include/time_fun.hpp
 CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp
 
