@@ -15,14 +15,14 @@
 
 int main() {
 
-	t_jobSeries jobs(3, 5);
-	
-	for (int y = 0; y < 5; y++) {
-		for (int x = 0; x < 3; x++) {
-			std::cout << jobs[y][x] << "\t";
-			if (x == 2) std::cout << std::endl;
-		}
-	}
+	t_jobSeries* jobs;
+	std::string filename = "ta001.txt";
+
+	std::cout << "loading" << std::endl;
+	jobs = FlowProblem::load_data(filename);
+	std::cout << "printing" << std::endl;
+	jobs->print();
+
 
 	// std::string names = "data/names.txt",	// nazwa listy nazw plikow
 	// 			output = "output.txt";		// nazwa pliku z danymi wyjsciowymi

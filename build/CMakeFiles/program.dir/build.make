@@ -57,9 +57,33 @@ include CMakeFiles/program.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/program.dir/flags.make
 
+CMakeFiles/program.dir/src/t_jobSeries.cpp.o: CMakeFiles/program.dir/flags.make
+CMakeFiles/program.dir/src/t_jobSeries.cpp.o: ../src/t_jobSeries.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/t_jobSeries.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/t_jobSeries.cpp.o -c /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.cpp
+
+CMakeFiles/program.dir/src/t_jobSeries.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/t_jobSeries.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.cpp > CMakeFiles/program.dir/src/t_jobSeries.cpp.i
+
+CMakeFiles/program.dir/src/t_jobSeries.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/t_jobSeries.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.cpp -o CMakeFiles/program.dir/src/t_jobSeries.cpp.s
+
+CMakeFiles/program.dir/src/t_jobSeries.cpp.o.requires:
+
+.PHONY : CMakeFiles/program.dir/src/t_jobSeries.cpp.o.requires
+
+CMakeFiles/program.dir/src/t_jobSeries.cpp.o.provides: CMakeFiles/program.dir/src/t_jobSeries.cpp.o.requires
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/t_jobSeries.cpp.o.provides.build
+.PHONY : CMakeFiles/program.dir/src/t_jobSeries.cpp.o.provides
+
+CMakeFiles/program.dir/src/t_jobSeries.cpp.o.provides.build: CMakeFiles/program.dir/src/t_jobSeries.cpp.o
+
+
 CMakeFiles/program.dir/src/functions.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/functions.cpp.o: ../src/functions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/functions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/functions.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/functions.cpp.o -c /home/jakub/Pulpit/Programy/SPD/SPD_03/src/functions.cpp
 
 CMakeFiles/program.dir/src/functions.cpp.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/program.dir/src/functions.cpp.o.provides.build: CMakeFiles/program.di
 
 CMakeFiles/program.dir/src/main.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/program.dir/src/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/main.cpp.o -c /home/jakub/Pulpit/Programy/SPD/SPD_03/src/main.cpp
 
 CMakeFiles/program.dir/src/main.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/program.dir/src/main.cpp.o.provides.build: CMakeFiles/program.dir/src
 
 CMakeFiles/program.dir/src/time_fun.cpp.o: CMakeFiles/program.dir/flags.make
 CMakeFiles/program.dir/src/time_fun.cpp.o: ../src/time_fun.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/program.dir/src/time_fun.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/program.dir/src/time_fun.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/time_fun.cpp.o -c /home/jakub/Pulpit/Programy/SPD/SPD_03/src/time_fun.cpp
 
 CMakeFiles/program.dir/src/time_fun.cpp.i: cmake_force
@@ -131,6 +155,7 @@ CMakeFiles/program.dir/src/time_fun.cpp.o.provides.build: CMakeFiles/program.dir
 
 # Object files for target program
 program_OBJECTS = \
+"CMakeFiles/program.dir/src/t_jobSeries.cpp.o" \
 "CMakeFiles/program.dir/src/functions.cpp.o" \
 "CMakeFiles/program.dir/src/main.cpp.o" \
 "CMakeFiles/program.dir/src/time_fun.cpp.o"
@@ -138,12 +163,13 @@ program_OBJECTS = \
 # External object files for target program
 program_EXTERNAL_OBJECTS =
 
+program: CMakeFiles/program.dir/src/t_jobSeries.cpp.o
 program: CMakeFiles/program.dir/src/functions.cpp.o
 program: CMakeFiles/program.dir/src/main.cpp.o
 program: CMakeFiles/program.dir/src/time_fun.cpp.o
 program: CMakeFiles/program.dir/build.make
 program: CMakeFiles/program.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable program"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jakub/Pulpit/Programy/SPD/SPD_03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable program"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/program.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -151,6 +177,7 @@ CMakeFiles/program.dir/build: program
 
 .PHONY : CMakeFiles/program.dir/build
 
+CMakeFiles/program.dir/requires: CMakeFiles/program.dir/src/t_jobSeries.cpp.o.requires
 CMakeFiles/program.dir/requires: CMakeFiles/program.dir/src/functions.cpp.o.requires
 CMakeFiles/program.dir/requires: CMakeFiles/program.dir/src/main.cpp.o.requires
 CMakeFiles/program.dir/requires: CMakeFiles/program.dir/src/time_fun.cpp.o.requires

@@ -2,6 +2,7 @@
 #define T_JOBSERIES_HPP
 
 #include <vector>
+#include <iostream>
 
 #include "t_job.hpp"
 
@@ -24,10 +25,9 @@ class t_jobSeries {
             series(jobSeries.series), job_number(jobSeries.job_number), machines(jobSeries.machines) {}
 
         t_job& operator[](const int& index) { return series.at(index); }
-        
-    
+        int& at(const int& i, const int& j) { return series.at(i).getJob().at(j); }
 
-
+        void print();
 };
 
 #endif

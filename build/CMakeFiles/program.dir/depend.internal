@@ -4,6 +4,7 @@
 CMakeFiles/program.dir/src/functions.cpp.o
  ../include/functions.hpp
  ../include/t_job.hpp
+ ../include/t_jobSeries.hpp
  /home/jakub/Pulpit/Programy/SPD/SPD_03/src/functions.cpp
 CMakeFiles/program.dir/src/main.cpp.o
  ../include/functions.hpp
@@ -11,6 +12,10 @@ CMakeFiles/program.dir/src/main.cpp.o
  ../include/t_jobSeries.hpp
  ../include/time_fun.hpp
  /home/jakub/Pulpit/Programy/SPD/SPD_03/src/main.cpp
+CMakeFiles/program.dir/src/t_jobSeries.cpp.o
+ ../include/t_job.hpp
+ ../include/t_jobSeries.hpp
+ /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.cpp
 CMakeFiles/program.dir/src/time_fun.cpp.o
  ../include/t_job.hpp
  ../include/time_fun.hpp

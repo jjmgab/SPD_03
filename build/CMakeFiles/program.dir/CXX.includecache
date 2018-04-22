@@ -27,6 +27,8 @@ cmath
 -
 t_job.hpp
 ../include/t_job.hpp
+t_jobSeries.hpp
+../include/t_jobSeries.hpp
 
 ../include/t_job.hpp
 vector
@@ -34,6 +36,8 @@ vector
 
 ../include/t_jobSeries.hpp
 vector
+-
+iostream
 -
 t_job.hpp
 ../include/t_job.hpp
@@ -75,6 +79,10 @@ t_jobSeries.hpp
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.hpp
 time_fun.hpp
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/time_fun.hpp
+
+/home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.cpp
+t_jobSeries.hpp
+/home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.hpp
 
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/time_fun.cpp
 time_fun.hpp

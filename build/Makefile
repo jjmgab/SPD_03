@@ -177,6 +177,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/t_jobSeries.o: src/t_jobSeries.cpp.o
+
+.PHONY : src/t_jobSeries.o
+
+# target to build an object file
+src/t_jobSeries.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/t_jobSeries.cpp.o
+.PHONY : src/t_jobSeries.cpp.o
+
+src/t_jobSeries.i: src/t_jobSeries.cpp.i
+
+.PHONY : src/t_jobSeries.i
+
+# target to preprocess a source file
+src/t_jobSeries.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/t_jobSeries.cpp.i
+.PHONY : src/t_jobSeries.cpp.i
+
+src/t_jobSeries.s: src/t_jobSeries.cpp.s
+
+.PHONY : src/t_jobSeries.s
+
+# target to generate assembly for a file
+src/t_jobSeries.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/t_jobSeries.cpp.s
+.PHONY : src/t_jobSeries.cpp.s
+
 src/time_fun.o: src/time_fun.cpp.o
 
 .PHONY : src/time_fun.o
@@ -219,6 +246,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/t_jobSeries.o"
+	@echo "... src/t_jobSeries.i"
+	@echo "... src/t_jobSeries.s"
 	@echo "... src/time_fun.o"
 	@echo "... src/time_fun.i"
 	@echo "... src/time_fun.s"

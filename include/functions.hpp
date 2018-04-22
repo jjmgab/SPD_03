@@ -13,7 +13,7 @@
 #include <cmath>
 
 #include "t_job.hpp"
-
+#include "t_jobSeries.hpp"
 
 namespace FlowProblem {
 
@@ -23,7 +23,7 @@ namespace FlowProblem {
  * @param nazwa pliku
  * @return 
  */
-    std::vector<t_job>* load_data(const std::string& filename);
+    t_jobSeries* load_data(const std::string&);
 
     namespace NEH {
 
