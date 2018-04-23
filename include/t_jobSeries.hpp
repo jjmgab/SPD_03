@@ -25,9 +25,14 @@ class t_jobSeries {
             series(jobSeries.series), job_number(jobSeries.job_number), machines(jobSeries.machines) {}
 
         t_job& operator[](const int& index) { return series.at(index); }
-        int& at(const int& i, const int& j) { return series.at(i).getJob().at(j); }
+        int& stepAt(const int& i, const int& j) { return series.at(i).getJob().at(j); }
+        t_job& jobAt(const int& i) { return series.at(i); }
+
+        bool isSeriesDone();
 
         void print();
+
+        const int cMax();
 };
 
 #endif

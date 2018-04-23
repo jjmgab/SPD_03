@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-t_jobSeries* FlowProblem::load_data(const std::string& filename) {
+t_jobSeries* FlowShop::load_data(const std::string& filename) {
 
     t_jobSeries* jobSeries;
 
@@ -28,7 +28,7 @@ t_jobSeries* FlowProblem::load_data(const std::string& filename) {
         for (i = 0; i < job_number; i++) {
             for (j = 0; j < machines; j++) {
                 file >> buffer >> buffer; // ignoruj numer zadania i wczytaj czas
-                jobSeries->at(i, j) = buffer;
+                jobSeries->stepAt(i, j) = buffer;
             }
         }
 

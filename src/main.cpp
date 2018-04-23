@@ -16,12 +16,14 @@
 int main() {
 
 	t_jobSeries* jobs;
-	std::string filename = "ta001.txt";
+	std::string filename = "ta0001.txt";
 
 	std::cout << "loading" << std::endl;
-	jobs = FlowProblem::load_data(filename);
+	jobs = FlowShop::load_data(filename);
 	std::cout << "printing" << std::endl;
 	jobs->print();
+	std::cout << "isSeriesDone: " << (jobs->isSeriesDone() ? "true" : "false") << std::endl;
+	std::cout << "Cmax: " << jobs->cMax() << std::endl;
 
 
 	// std::string names = "data/names.txt",	// nazwa listy nazw plikow

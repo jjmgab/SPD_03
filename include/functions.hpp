@@ -15,7 +15,7 @@
 #include "t_job.hpp"
 #include "t_jobSeries.hpp"
 
-namespace FlowProblem {
+namespace FlowShop {
 
 /**
  * Wczytuje dane z podanego pliku do 
