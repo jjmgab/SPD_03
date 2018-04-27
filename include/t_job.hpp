@@ -2,6 +2,9 @@
 #define T_JOB_HPP
 
 #include <vector>
+#include <algorithm>
+#include <utility>
+#include <functional>
 
 class t_job {
     private:
@@ -14,9 +17,12 @@ class t_job {
         t_job(const t_job& _job) : steps(_job.steps), machines(_job.machines), step_index(_job.step_index) {}
 
         int& operator[](const int& index) { return steps.at(index); }
-        t_job& operator=(t_job& _job) {this->steps = _job.steps; this->machines = _job.machines; return *this;}
+        t_job& operator=(t_job _job) {this->steps = _job.getSteps(); this->machines = _job.getMachines(); return *this;}
 
         std::vector<int>& getJob() { return steps; }
+
+        std::vector<int>& getSteps() { return steps; }
+        int& getMachines() { return machines; }
 
         bool isDone() { return (step_index >= machines ? true : false); }
 
@@ -29,6 +35,14 @@ class t_job {
                 step_index++;
                 return steps.at(step_index);
             } else return -1;
+        }
+
+        const int getPriority() {
+            int value = 0;
+            for (auto v : steps) {
+                value += v;
+            }
+            return value;
         }
 };
 

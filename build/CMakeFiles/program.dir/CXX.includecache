@@ -33,11 +33,21 @@ t_jobSeries.hpp
 ../include/t_job.hpp
 vector
 -
+algorithm
+-
+utility
+-
+functional
+-
 
 ../include/t_jobSeries.hpp
 vector
 -
 iostream
+-
+algorithm
+-
+functional
 -
 t_job.hpp
 ../include/t_job.hpp

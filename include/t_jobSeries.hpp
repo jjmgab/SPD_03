@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <functional>
 
 #include "t_job.hpp"
 
@@ -11,6 +13,8 @@ class t_jobSeries {
         std::vector<t_job> series;
         int job_number;
         int machines;
+
+        const int cMax(std::vector<t_job>&) const;
 
     public:
         t_jobSeries(const int& _machines, const int& _job_number) :
@@ -33,6 +37,9 @@ class t_jobSeries {
         void print();
 
         const int cMax();
+        
+
+        t_jobSeries& alogrithm_NEH();
 };
 
 #endif

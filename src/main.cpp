@@ -16,14 +16,16 @@
 int main() {
 
 	t_jobSeries* jobs;
-	std::string filename = "ta0001.txt";
+	std::string filename = "ta0000.txt";
 
 	std::cout << "loading" << std::endl;
 	jobs = FlowShop::load_data(filename);
-	std::cout << "printing" << std::endl;
+
 	jobs->print();
-	std::cout << "isSeriesDone: " << (jobs->isSeriesDone() ? "true" : "false") << std::endl;
-	std::cout << "Cmax: " << jobs->cMax() << std::endl;
+
+	std::cout << "Cmax after loading = " << jobs->cMax() << std::endl;
+	jobs->alogrithm_NEH();
+	std::cout << "Cmax after NEH algorithm = " << jobs->cMax() << std::endl;
 
 
 	// std::string names = "data/names.txt",	// nazwa listy nazw plikow
@@ -47,6 +49,6 @@ int main() {
 	
  
 	// file_names.close();
-
+	delete jobs;
 	return 0;
 }
