@@ -61,6 +61,8 @@ ctime
 -
 t_job.hpp
 ../include/t_job.hpp
+t_jobSeries.hpp
+../include/t_jobSeries.hpp
 
 /home/jakub/Pulpit/Programy/SPD/SPD_03/src/functions.cpp
 functions.hpp

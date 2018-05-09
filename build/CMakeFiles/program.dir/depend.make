@@ -17,6 +17,7 @@ CMakeFiles/program.dir/src/t_jobSeries.cpp.o: ../include/t_jobSeries.hpp
 CMakeFiles/program.dir/src/t_jobSeries.cpp.o: ../src/t_jobSeries.cpp
 
 CMakeFiles/program.dir/src/time_fun.cpp.o: ../include/t_job.hpp
+CMakeFiles/program.dir/src/time_fun.cpp.o: ../include/t_jobSeries.hpp
 CMakeFiles/program.dir/src/time_fun.cpp.o: ../include/time_fun.hpp
 CMakeFiles/program.dir/src/time_fun.cpp.o: ../src/time_fun.cpp
 

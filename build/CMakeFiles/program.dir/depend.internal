@@ -18,5 +18,6 @@ CMakeFiles/program.dir/src/t_jobSeries.cpp.o
  /home/jakub/Pulpit/Programy/SPD/SPD_03/src/t_jobSeries.cpp
 CMakeFiles/program.dir/src/time_fun.cpp.o
  ../include/t_job.hpp
+ ../include/t_jobSeries.hpp
  ../include/time_fun.hpp
  /home/jakub/Pulpit/Programy/SPD/SPD_03/src/time_fun.cpp

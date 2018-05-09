@@ -15,13 +15,13 @@ t_jobSeries* FlowShop::load_data(const std::string& filename) {
 
     file.open(filename.c_str(), std::ios::in);
     if (file.is_open()) {
-        file >> s_buffer;     // ignoruj nazwe
-        std::cout << s_buffer << std::endl;
+        //file >> s_buffer;     // ignoruj nazwe
+        //std::cout << "buffer: " << s_buffer << std::endl;
 
         file >> job_number;
         file >> machines;
 
-        std::cout << job_number << " " << machines << std::endl;
+        std::cout << "job number: " << job_number << " machines: " << machines << std::endl;
 
         jobSeries = new t_jobSeries(machines, job_number);
 

@@ -39,7 +39,7 @@ class t_jobSeries {
         const int cMax();
         
 
-        t_jobSeries& alogrithm_NEH();
+        t_jobSeries& algorithm_NEH();
 };
 
 #endif
