@@ -7,6 +7,9 @@
 
 #include <stdlib.h>
 
+#include <chrono>
+#include <iomanip>      // std::setprecision
+
 #include "functions.hpp"
 #include "t_job.hpp"
 #include "t_jobSeries.hpp"
@@ -15,17 +18,7 @@
 int main()
 {
 
-	t_jobSeries *jobs;
-	// std::string filename = "ta0000.txt";
-
-	// std::cout << "loading" << std::endl;
-	// jobs = FlowShop::load_data(filename);
-
-	// jobs->print();
-
-	// std::cout << "Cmax after loading = " << jobs->cMax() << std::endl;
-	// jobs->alogrithm_NEH();
-	// std::cout << "Cmax after NEH algorithm = " << jobs->cMax() << std::endl;
+	t_jobSeries *jobs, *jobs2;
 
 	std::string names = "data/names.txt", 		// nazwa listy nazw plikow
 		output = "output.txt";			  		// nazwa pliku z danymi wyjsciowymi
@@ -48,10 +41,6 @@ int main()
 	else
 		exit(-1);
 
-	loader << "filename" << std::endl;
-	loader << "Cmax before alg." << std::endl;
-	loader << "Cmax after alg." << std::endl;
-	loader << "clock time of alg., s" << std::endl << std::endl;
 
 	for (i = 0; i < number_of_files; i++) {
 
@@ -61,22 +50,36 @@ int main()
 		
 		// wczytuje dane z pliku
 		std::cout << " * " << filename << std::endl;
+		std::cout << "loading jobs for SA . . . ";
 		jobs = FlowShop::load_data("data/"+filename+".txt");
+		std::cout << "loading jobs for NEH . . . ";
+		jobs2 = FlowShop::load_data("data/"+filename+".txt");
+		std::cout << std::endl;
 
+		loader << filename << " ";
+		loader << jobs->cMax() << " ";
+		std::cout << "Cmax clear:\t" << jobs->cMax() << std::endl;
 
-		clock_t t;
+		auto start_SA = std::chrono::high_resolution_clock::now();
+		jobs->algorithm_SA(100.00f, 0.999f, t_jobSeries::t_SA_choice::SWAP, false);
+		auto finish_SA = std::chrono::high_resolution_clock::now();
+		std::chrono::duration<double> elapsed_SA = finish_SA - start_SA;
 
-		loader << filename << std::endl;
+		std::cout << "Cmax SA:\t" << jobs->cMax() << std::endl;
+
+		auto start_NEH = std::chrono::high_resolution_clock::now();
+		jobs2->algorithm_NEH();
+		auto finish_NEH = std::chrono::high_resolution_clock::now();
+		std::chrono::duration<double> elapsed_NEH = finish_NEH - start_NEH;
+
+		std::cout << "Cmax NEH:\t" << jobs2->cMax() << std::endl;
+
+		loader << jobs2->cMax() << " ";
 		loader << jobs->cMax() << std::endl;
-		std::cout << jobs->cMax() << std::endl;
+		
 
-		t = clock();
-		jobs->algorithm_NEH();
-		t = clock()-t;
-
-		loader << jobs->cMax() << std::endl;
-		loader << ((float)t/CLOCKS_PER_SEC) << std::endl;
-		std::cout << ((float)t/CLOCKS_PER_SEC) << " s" << std::endl;
+		std::cout << "time SA:\t" 	<< elapsed_SA.count() 	<< " s" << std::endl;
+		std::cout << "time NEH:\t" 	<< elapsed_NEH.count() 	<< " s" << std::endl;
 
 
 		delete jobs;

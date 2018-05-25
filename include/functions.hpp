@@ -25,10 +25,6 @@ namespace FlowShop {
  */
     t_jobSeries* load_data(const std::string&);
 
-    namespace NEH {
-
-    }
-
 }
 
 
