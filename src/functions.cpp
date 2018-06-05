@@ -21,7 +21,7 @@ t_jobSeries* FlowShop::load_data(const std::string& filename) {
         file >> job_number;
         file >> machines;
 
-        std::cout << "job number: " << job_number << " machines: " << machines << std::endl;
+        //std::cout << "job number: " << job_number << " machines: " << machines << std::endl;
 
         jobSeries = new t_jobSeries(machines, job_number);
 

@@ -411,7 +411,7 @@ t_jobSeries &t_jobSeries::algorithm_NEH_mod()
 */
 t_jobSeries &t_jobSeries::algorithm_SA(const double& _T, const double& _wsp, const t_SA_choice& _choice, const bool& _sort) {
 
-    std::cout << "Algorithm SA -- start" << std::endl;
+    //std::cout << "Algorithm SA -- start" << std::endl;
     if (_wsp > 1.000f) exit(-1);
 
     srand(time(NULL));
@@ -432,68 +432,135 @@ t_jobSeries &t_jobSeries::algorithm_SA(const double& _T, const double& _wsp, con
         });
     }
 
-    // std::cout << std::endl;
     // petla wyzarzania
     do {
-        // std::cout << "iteracja " << iter << std::endl;
-        // std::cout << "  * T = " << T << std:: endl;
         F_prev = this->cMax();  // wyznacza poprzednia wartosc f. celu
-        // std::cout << "  * F_prev = " << F_prev << std:: endl;
 
         switch (_choice) {
 
             case t_SA_choice::SWAP:
             // zamienia miejscami dwa losowe zadania
             {
-                // std::cout << " > SWAP" << std::endl;
                 int series_size = this->series.size(),
                     first = -1,
                     second = -1;
+
+                double k = 1000000000;
 
                 // losuje 1. i 2. indeks
                 first = rand() % series_size;
                 second = rand() % series_size;
                 while (second == first) { second = rand() % series_size; }
 
-                // std:: cout << "  * first = " << first << ", second = " << second << std::endl;
-
                 // zamienia miejscami wylosowane zadania
                 std::swap(this->series[first], this->series[second]);
                 F_curr = this->cMax();
-                // std::cout << "  * F_curr = " << F_curr << std:: endl;
 
                 // w momencie, gdy zmiana jest niepozadana
                 if (F_curr > F_prev) {
 
-                    // TODO: znalezc inny wzor na P dla SA (Google)
                     // prawdopodobienstwo niekorzystnego ruchu
-                    double P = std::exp(((double)(F_prev - F_curr))/T);
+                    double P = std::exp(((double)(F_prev - F_curr))/(k * T));
                     // losowana zmienna z zakresu (0,1)
                     double rnd = ((double)(rand() % RANDOM_DOUBLE_MAX)) / ((double)RANDOM_DOUBLE_MAX);
-                    // std:: cout << "  * P = " << P << ", rnd = " << rnd << std::endl;
                     
                     // jesli prawdopodobnienstwo n. r. jest za duze
                     if (rnd < P) {
-                        // std::cout << " > SWAP back" << std::endl;
                         // cofnij
                         std::swap(this->series[first], this->series[second]);
                     }
                 }
-
+                if (this->series.size() != series_size) exit(-1);
             }
             break;
 
             case t_SA_choice::INSERT:
             // losuje zadanie i przesuwa je w losowe miejsce
             {
+                int series_size = this->series.size(),
+                    job_index = -1,
+                    place_index = -1;
+                double k = 1000000000;
 
+                // losuje 1. i 2. indeks
+                job_index = rand() % series_size;
+                place_index = rand() % series_size;
+                while (place_index == job_index) { place_index = rand() % series_size; }
+
+                // przenosi element w wylosowane miejsce
+
+                t_job job(this->series.at(job_index));
+                this->series.erase(this->series.begin() + job_index);
+                this->series.insert(this->series.begin() + place_index, job);
+                
+                F_curr = this->cMax();
+
+                // w momencie, gdy zmiana jest niepozadana
+                if (F_curr > F_prev) {
+
+                    // prawdopodobienstwo niekorzystnego ruchu
+                    double P = std::exp(((double)(F_prev - F_curr))/(k * T));
+                    // losowana zmienna z zakresu (0,1)
+                    double rnd = ((double)(rand() % RANDOM_DOUBLE_MAX)) / ((double)RANDOM_DOUBLE_MAX);
+                    
+                    // jesli prawdopodobnienstwo n. r. jest za duze
+                    if (rnd < P) {
+                        // cofnij
+                        this->series.erase(this->series.begin() + place_index);
+                        this->series.insert(this->series.begin() + job_index, job);
+                    }
+                }
+
+                if (this->series.size() != series_size) exit(-1);
             }
             break;
 
             case t_SA_choice::TWIST:
             // losuje dwa zadania i odwraca kolejnosc wszystkich zadan miedzy nimi
             {
+                int series_size = this->series.size(),
+                    first_index = -1,
+                    second_index = -1;
+                double k = 1000000000;
 
+                // losuje 1. i 2. indeks
+                first_index = rand() % series_size;
+                second_index = rand() % series_size;
+                while (first_index + 2 < second_index) { first_index = rand() % series_size; }
+
+                // przenosi element w wylosowane miejsce
+                int f = first_index,
+                    s = second_index;
+                while (f < s) {
+                    f++;
+                    s--;
+                    std::swap(this->series.at(f), this->series.at(s));
+                }
+                
+                F_curr = this->cMax();
+
+                // w momencie, gdy zmiana jest niepozadana
+                if (F_curr > F_prev) {
+
+                    // prawdopodobienstwo niekorzystnego ruchu
+                    double P = std::exp(((double)(F_prev - F_curr))/(k * T));
+                    // losowana zmienna z zakresu (0,1)
+                    double rnd = ((double)(rand() % RANDOM_DOUBLE_MAX)) / ((double)RANDOM_DOUBLE_MAX);
+                    
+                    // jesli prawdopodobnienstwo n. r. jest za duze
+                    if (rnd < P) {
+                        // cofnij
+                        int f = first_index,
+                            s = second_index;
+                        while (f < s) {
+                            f++;
+                            s--;
+                            std::swap(this->series.at(f), this->series.at(s));
+                        }
+                    }
+                }
+
+                if (this->series.size() != series_size) exit(-1);
             }
             break;
         }
@@ -502,7 +569,4 @@ t_jobSeries &t_jobSeries::algorithm_SA(const double& _T, const double& _wsp, con
         iter++;
 
     } while (T > T_min);
-
-    std::cout << "  Iterations: " << iter << std::endl;
-    std::cout << "Algorithm SA -- finish" << std::endl;
 }
